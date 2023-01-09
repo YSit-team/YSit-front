@@ -1,0 +1,163 @@
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
+* {
+    margin: 0;
+
+    font-family: 'Hanna';
+}
+
+html {
+    background: linear-gradient(to right bottom, #9786FF, #2805FC); 
+    width: 100vw; 
+    height: 50vw;    
+}
+
+.topwrap {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 3%;
+    margin-bottom: 10px;
+}
+
+.chwrap {
+    display: flex;
+    padding-top: 30px;
+
+    height: 36px;
+}
+
+.ch {
+    font-size: 35px;
+    font-weight: 540;
+    margin-left: 60px;
+    color: white;
+    text-decoration: none;
+}
+
+.ch:hover {
+    color:#1E00D3;
+}
+
+/* .menubar {
+    background-color: white;
+    height: 150px;
+    width: 100%;
+
+    box-shadow: 8px 8px 15px 5px rgba(0, 0, 0, 0.25);
+} */
+
+.ract {
+    background-color: white;
+    height: 570px;
+    width: 500px;
+    position: relative;
+
+    margin: auto;
+    margin-top: 130px;
+
+    box-shadow: 8px 8px 15px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+
+.childract {
+    position: absolute;
+}
+
+.title1{
+    font-size: 32px;
+    text-align: center;
+
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+.contents {
+    font-family: sans-serif;
+}
+
+#student {
+    color:#1E00D3;
+}
+
+.checkbox{
+    padding: 5px 20px 5px 20px;
+    margin: 0px 50px 0px 50px;
+
+    color: #B7B7B7;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: sans-serif;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.checkboxwrap {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.line {
+    width: 1px;
+    height: 20px;
+    
+    margin-top: 10px;
+
+    background-color: rgb(174, 174, 174);
+}
+
+.signText {
+    font-size: 13px;
+
+    margin-left: 5px;
+    margin-top: 15px;
+    margin-bottom: 3px;
+}
+
+.signUp {
+    width: 400px;
+    height: 50px;
+
+    border: 1px solid #E5E5E5;
+    border-radius: 12px;
+
+    padding-left: 10px;
+}
+
+.signUpWrap input:focus {
+    border-color:#0982f0;
+    outline: none;
+}
+
+.signUpWrap{
+    display: flex;
+    flex-direction: column;
+
+    width: 400px;
+    
+    margin: 0 auto;
+    margin-left: 40px;
+}
+
+.signUpBtn {
+    width: 414px;
+    height: 60px;
+    font-size: 20px;
+    
+    background: #1E00D3;
+    border: 0px solid #E5E5E5;
+    border-radius: 12px;
+
+    color: white;
+    cursor: pointer;
+}
+
+.signUpBtnWrap {
+    margin-top: 30px;
+    margin-left: 40px;
+    display: flex;
+    justify-content: center;
+}
