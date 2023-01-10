@@ -1,7 +1,17 @@
+@import url(//fonts.googleapis.com/earlyaccess/hanna.css);
+
 * {
-    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+
+    font-family: 'Hanna';
 }
 
+@media(max-width: 1000px) {
+    .ch {
+        color: red;
+    }
+}
+    
 .topwrap {
     display: flex;
     margin-top: 30px;
@@ -17,8 +27,8 @@
 }
 
 .ch {
-    font-size: 25px;
-    font-weight: 550;
+    font-size: 35px;
+    font-weight: 540;
     margin-left: 60px;
     color: black;
     text-decoration: none;
@@ -89,14 +99,11 @@
     font-weight: 550;
     color: rgba(0, 0, 0, 0.5);
 
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-top: 20px;
+    margin: 20px 3% 50px 3%;
 
     background-color: rgba(217, 217, 217, 0.5);
     border-radius: 20px;
     height: 400px;
 
-    padding-left: 20px;
-    padding-top: 20px;
+    padding: 20px 0px 0px 20px;
 }
