@@ -31,7 +31,7 @@ const UserLogin = () => {
             const body = new FormData();
             body.append('loginId', inputId)
             body.append("loginPw", inputPw)
-            axios.post("/api/user/login"
+            axios.post("http://3.38.26.161:8080/api/user/login"
             , body, {
                 headers: {
                     'content-type': 'multipart/form-data'
