@@ -31,7 +31,7 @@ const UserLogin = () => {
             const body = new FormData();
             body.append('loginId', inputId)
             body.append("loginPw", inputPw)
-            const response = axios.post("/api/user/login"
+            axios.post("/api/user/login"
             , body, {
                 headers: {
                     'content-type': 'multipart/form-data'
@@ -43,7 +43,6 @@ const UserLogin = () => {
             )
             .then((res) => {
             console.log(res.data);
-            console.log(response);
             if(res.data.code === 200) {
                 console.log("로그인");
                 // dispatch(loginUser(res.data.userInfo));
