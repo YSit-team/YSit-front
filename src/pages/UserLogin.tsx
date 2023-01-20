@@ -22,45 +22,84 @@ const UserLogin = () => {
 
 	// login 버튼 클릭 이벤트
     const onClickLogin = () => {
-        navigate('/home')
-    }
-
-    useEffect(() => {
-        const LoginFunc = async (e: { preventDefault: () => void; }) => {
-            e.preventDefault();
-            if (!inputId) {
-            return alert("ID를 입력하세요.");
+        if (!inputId) {
+        return alert("ID를 입력하세요.");
+        }
+        else if (!inputPw) {
+        return alert("Password를 입력하세요.");
+        }else {
+            const body = new FormData();
+            body.append('loginId', inputId)
+            body.append("loginPw", inputPw)
+            const response = axios.post("/api/user/login"
+            , body, {
+                headers: {
+                    'content-type': 'multipart/form-data'
+                },     
+                transformRequest: (data, headers) => {
+                    return data;
+                  },
+                }
+            )
+            .then((res) => {
+            console.log(res.data);
+            console.log(response);
+            if(res.data.code === 200) {
+                console.log("로그인");
+                // dispatch(loginUser(res.data.userInfo));
             }
-            else if (!inputPw) {
-            return alert("Password를 입력하세요.");
-            }else {
-                let body = {
-                loginid : inputId,
-                loginpw : inputPw
-                };
-                await axios.post("/api/user/", body)
-                .then((res) => {
-                console.log(res.data);
-                if(res.data.code === 200) {
-                    console.log("로그인");
-                    // dispatch(loginUser(res.data.userInfo));
-                }
-                if(res.data.code === 400) {
-                    alert("ID, Password가 비어있습니다.");
-                }
-                if(res.data.code === 401) {
-                    alert("존재하지 않는 ID입니다.");
-                }
-                if(res.data.code === 402) {
-                    alert("Password가 틀립니다.");
-                }
-                })
-                .catch((error)=>{
-                    alert(error);
-                })
-        }}}, []);
+            if(res.data.code === 400) {
+                alert("ID, Password가 비어있습니다.");
+            }
+            if(res.data.code === 401) {
+                alert("존재하지 않는 ID입니다.");
+            }
+            if(res.data.code === 402) {
+                alert("Password가 틀립니다.");
+            }
+            })
+            .catch((error)=>{
+                alert(error);
+            })}
+            navigate('/');
+        }
 
-	// 페이지 렌더링 후 가장 처음 호출되는 함수
+    // useEffect(() => {
+        // const LoginFunc = async (e: { preventDefault: () => void; }) => {
+        //     e.preventDefault();
+        //     if (!inputId) {
+        //     return alert("ID를 입력하세요.");
+        //     }
+        //     else if (!inputPw) {
+        //     return alert("Password를 입력하세요.");
+        //     }else {
+        //         let body = {
+        //         loginId : inputId,
+        //         loginPw : inputPw
+        //         };
+        //         await axios.post("/api/user/login", body)
+        //         .then((res) => {
+        //         console.log(res.data);
+        //         if(res.data.code === 200) {
+        //             console.log("로그인");
+        //             // dispatch(loginUser(res.data.userInfo));
+        //         }
+        //         if(res.data.code === 400) {
+        //             alert("ID, Password가 비어있습니다.");
+        //         }
+        //         if(res.data.code === 401) {
+        //             alert("존재하지 않는 ID입니다.");
+        //         }
+        //         if(res.data.code === 402) {
+        //             alert("Password가 틀립니다.");
+        //         }
+        //         })
+        //         .catch((error)=>{
+        //             alert(error);
+        //         })
+        // }}}, []);
+
+	// // 페이지 렌더링 후 가장 처음 호출되는 함수
     // useEffect(() => {
     //     axios.post('/api/user/login', {
     //         loginId: inputId,
@@ -71,7 +110,7 @@ const UserLogin = () => {
     //         )
     //     .catch()
     // },
-    // 페이지 호출 후 처음 한번만 호출될 수 있도록 [] 추가
+    // // 페이지 호출 후 처음 한번만 호출될 수 있도록 [] 추가
     // [])
     
     let navigate = useNavigate();

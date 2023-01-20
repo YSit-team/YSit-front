@@ -11,7 +11,7 @@ const Home = () => {
       <Menubar/>
       {/* <_Notice>공지사항</_Notice> */}
       <_Itfwrap>
-      <_Interface><button onClick={()=>{navigate('/login')}}>로그인 버튼</button></_Interface>
+      <_Interface><button onClick={()=>{navigate('/greeting')}}>greeting 버튼</button></_Interface>
       <_Interface></_Interface>
       </_Itfwrap>
       <_Itfwrap>

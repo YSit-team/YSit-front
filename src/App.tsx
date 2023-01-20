@@ -7,6 +7,7 @@ import Signup from './pages/Signup';
 import Findid from './pages/Findid';
 import Findpw from './pages/Findpw';
 import Rental from './pages/Rental';
+import Greet from './pages/Greet';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<UserLogin/>} />
+      <Route path="/greeting" element={<Greet/>} />
       <Route path="/sign-up" element={<Signup />} />
       <Route path="/find-id" element={<Findid />} />
       <Route path="/find-pw" element={<Findpw />} />
